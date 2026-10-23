@@ -1,0 +1,86 @@
+
+/* Paleta de colores de la clinica veterinaria */
+:root {
+    --azul-cielo: #9BB9E0;
+    --blanco-calido: #F4F1E8;
+    --cafe-crema: #C18041;
+    --azul-principal: #5976AC;
+    --gris-calido: #A89F93;
+}
+
+/* Fondo general */
+body {
+    background-color: var(--blanco-calido);
+    color: #333333;
+}
+
+/* Barra de navegacion */
+.navbar {
+    background-color: var(--azul-principal);
+}
+
+/* Titulos */
+h1, h2, h3 {
+    color: var(--azul-principal);
+}
+
+/* Botones principales */
+.btn-primary {
+    background-color: var(--azul-principal);
+    border-color: var(--azul-principal);
+}
+
+/* Botones al pasar el mouse */
+.btn-primary:hover {
+    background-color: #465F90;
+    border-color: #465F90;
+}
+
+/* Botones secundarios */
+.btn-secondary {
+    background-color: var(--azul-cielo);
+    border-color: var(--azul-cielo);
+    color: #263C60;
+}
+
+/* Enlaces */
+a {
+    color: var(--azul-principal);
+}
+
+/* Bordes y detalles */
+.card {
+    border-color: var(--gris-calido);
+}
+
+/* Texto destacado */
+.text-destacado {
+    color: var(--cafe-crema);
+}
+
+
+/* Quitar el verde de los elementos de Bootstrap */
+
+.bg-success {
+    background-color: #5976AC !important;
+}
+
+.text-success {
+    color: #5976AC !important;
+}
+
+.btn-success {
+    background-color: #5976AC !important;
+    border-color: #5976AC !important;
+}
+
+.btn-success:hover {
+    background-color: #465F90 !important;
+    border-color: #465F90 !important;
+}
+
+.alert-success {
+    background-color: #F4F1E8 !important;
+    color: #5976AC !important;
+    border-color: #A89F93 !important;
+}
