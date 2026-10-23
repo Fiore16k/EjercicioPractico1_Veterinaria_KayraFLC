@@ -1,0 +1,14 @@
+package com.clinicaveterinaria.gestionveterinaria;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class GestionveterinariaApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(
+                        GestionveterinariaApplication.class, args);
+	}
+
+}
