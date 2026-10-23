@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tipos de servicio</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body class="bg-light">
+
+    <nav class="navbar navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" th:href="@{/}">Clínica Veterinaria</a>
+            <a class="btn btn-light" th:href="@{/}">Inicio</a>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        <h1>Tipos de servicio</h1>
+
+        <div th:if="${mensaje}" class="alert alert-success" th:text="${mensaje}"></div>
+
+        <a class="btn btn-success mb-3" th:href="@{/tipos-servicio/nuevo}">
+            Agregar tipo
+        </a>
+
+        <table class="table table-bordered table-striped bg-white">
+            <thead class="table-success">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Cantidad de servicios</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="tipo : ${tiposServicio}">
+                    <td th:text="${tipo.nombre}"></td>
+                    <td th:text="${tipo.descripcion}"></td>
+                    <td th:text="${tipo.servicios.size()}"></td>
+                    <td>
+                        <a class="btn btn-warning btn-sm"
+                           th:href="@{/tipos-servicio/editar/{id}(id=${tipo.id})}">
+                            Editar
+                        </a>
+
+                        <form th:action="@{/tipos-servicio/eliminar/{id}(id=${tipo.id})}"
+                              method="post" class="d-inline"
+                              onsubmit="return confirm('¿Desea eliminar este tipo de servicio?');">
+                            <button type="submit" class="btn btn-danger btn-sm">
+                                Eliminar
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                <tr th:if="${#lists.isEmpty(tiposServicio)}">
+                    <td colspan="4" class="text-center">
+                        No hay tipos de servicio registrados.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer class="bg-success text-white text-center p-3">
+        Clínica Veterinaria
+    </footer>
+
+    </body>
+    </html>

@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.clinicaveterinaria.gestionveterinaria.service;
 
 import com.clinicaveterinaria.gestionveterinaria.domain.Servicio;
@@ -10,7 +7,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ServicioServiceImpl {
+public class ServicioServiceImpl implements ServicioService {
 
     private final ServicioRepository servicioRepository;
 
@@ -36,5 +33,5 @@ public class ServicioServiceImpl {
     @Override
     public void eliminar(Integer id) {
         servicioRepository.deleteById(id);
-    }    
+    }
 }
